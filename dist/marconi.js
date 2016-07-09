@@ -60,6 +60,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: true
 	});
 	exports.decode = decode;
+	exports.encode = encode;
 	var morseLib = {
 	    '-.-.--': '!',
 	    '.-..-.': '"',
@@ -141,6 +142,45 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    // Return the decoded words, joined by spaces
 	    return decoded.join(' ');
+	}
+
+	function encode(string) {
+	    var morseLibSwapped = switchValues(morseLib);
+	    // Trim Whitespace
+	    string = string.trim().toUpperCase();
+
+	    // Split into the words
+	    var wordsArr = string.split(' ');
+
+	    // Split the charachters of each word and add it to a
+	    // new array
+	    var letterArr = [];
+	    for (var _i = 0; _i < wordsArr.length; _i++) {
+	        letterArr.push(wordsArr[_i].split(''));
+	    }
+
+	    // Run through the array and encode
+	    var encoded = [];
+	    for (var i = 0; i < letterArr.length; i++) {
+	        var word = [];
+	        for (var j = 0; j < letterArr[i].length; j++) {
+	            word.push(morseLibSwapped[letterArr[i][j]]);
+	        }
+	        encoded.push(word.join(' '));
+	    }
+
+	    // Return the decoded words, joined by 3 spaces
+	    return encoded.join('   ');
+	}
+
+	function switchValues(o) {
+	    var t = {};
+	    for (var i in o) {
+	        if (o.hasOwnProperty(i)) {
+	            t[o[i]] = i;
+	        }
+	    }
+	    return t;
 	}
 
 /***/ }

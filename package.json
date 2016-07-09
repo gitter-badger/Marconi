@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "A Simple Library To Decode Morse Code",
   "main": "lib/index.js",
+  "tonicExample": "var marconi = require('marconi'); \nconsole.log('.... .', '=', marconi.decode('.... .'));",
   "scripts": {
     "build:all": "npm run clean && npm run build && npm run build:umd && npm run build:umd:min",
     "build": "babel src --out-dir lib",

@@ -80,3 +80,43 @@ export function decode(morseCode) {
     // Return the decoded words, joined by spaces
     return decoded.join(' ');
 }
+
+export function encode(string) {
+    const morseLibSwapped = switchValues(morseLib);
+    // Trim Whitespace
+    string = string.trim().toUpperCase();
+
+    // Split into the words
+    const wordsArr = string.split(' ');
+
+    // Split the charachters of each word and add it to a
+    // new array
+    let letterArr = [];
+    for (let i = 0; i < wordsArr.length; i++) {
+        letterArr.push(wordsArr[i].split(''));
+    }
+
+    // Run through the array and encode
+    let encoded = [];
+    for (var i = 0; i < letterArr.length; i++) {
+        var word = [];
+        for (var j = 0; j < letterArr[i].length; j++) {
+            word.push(morseLibSwapped[letterArr[i][j]])
+        }
+        encoded.push(word.join(' '));
+    }
+
+    // Return the decoded words, joined by 3 spaces
+    return encoded.join('   ');
+
+}
+
+function switchValues(o) {
+    var t = {};
+    for (var i in o) {
+        if(o.hasOwnProperty(i)){
+            t[o[i]] = i ;
+        }
+    }
+    return t;
+}

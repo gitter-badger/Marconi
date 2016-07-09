@@ -8,6 +8,9 @@ A Javascript Library to work with Morse Code
 [![GitHub stars](https://img.shields.io/github/stars/adamisntdead/Marconi.svg)](https://github.com/adamisntdead/Marconi/stargazers)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/adamisntdead/Marconi/master/LICENSE)
 
+[![npm](https://img.shields.io/npm/dt/marconi.svg?maxAge=2592000)]()
+[![npm](https://img.shields.io/npm/v/marconi.svg?maxAge=2592000)]()
+
 ## Usage
 ##### Nodejs
 Install the module `marconi`
@@ -18,4 +21,5 @@ app.js
 var marconi = require('marconi');
 
 console.log('... --- ...', '=', marconi.decode('... --- ...'));
+console.log('Hello = ' + marconi.encode('Hello'));
 ```
