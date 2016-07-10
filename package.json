@@ -10,8 +10,8 @@
     "build:umd": "webpack src/index.js dist/marconi.js",
     "build:umd:min": "cross-env NODE_ENV=production webpack src/index.js dist/marconi.min.js",
     "clean": "rimraf lib dist coverage",
-    "test:cov": "babel-node ./node_modules/isparta/bin/isparta cover ./node_modules/mocha/bin/_mocha -- --recursive codecov",
-    "test": "mocha --compilers js:babel-register --recursive && npm run test:cov",
+    "test:cov": "babel-node ./node_modules/isparta/bin/isparta cover ./node_modules/mocha/bin/_mocha -- --recursive",
+    "test": "mocha --compilers js:babel-register --recursive",
     "test:watch": "npm test -- --watch"
   },
   "repository": {
