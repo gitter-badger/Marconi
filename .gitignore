@@ -26,6 +26,5 @@ bower_components
 # OS metadata
 .DS_Store
 
-coverage
 
 Thumbs.db
