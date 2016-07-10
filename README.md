@@ -1,4 +1,6 @@
 # Marconi
+
+[![Join the chat at https://gitter.im/adamisntdead/Marconi](https://badges.gitter.im/adamisntdead/Marconi.svg)](https://gitter.im/adamisntdead/Marconi?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 A Javascript Library to work with Morse Code
 
 [![Travis](https://img.shields.io/travis/adamisntdead/Marconi.svg?maxAge=2592000)](https://travis-ci.org/adamisntdead/Marconi)
